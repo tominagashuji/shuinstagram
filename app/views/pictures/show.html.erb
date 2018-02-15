@@ -1,0 +1,28 @@
+<p id="notice"></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @picture.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @picture.image %>
+</p>
+
+<% unless @picture.user == current_user %>
+  <% if @favorite.present? %>
+    <button type="button" class="btn btn-danger">
+      <%= link_to 'お気に入り解除する', favorite_path(picture_id: @picture.id), method: :delete %>
+    </button>
+  <% else %>
+    <button type="button" class="btn btn-prymary">
+      <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post %>
+    </button>
+  <% end %>
+<% end %>
