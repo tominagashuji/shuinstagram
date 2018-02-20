@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180208060125) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "picture_id"
@@ -33,11 +36,12 @@ ActiveRecord::Schema.define(version: 20180208060125) do
     t.string "email"
     t.string "password_digest"
     t.text "image"
-    t.integer "picture_id"
+    t.bigint "picture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["picture_id"], name: "index_users_on_picture_id"
   end
 
+  add_foreign_key "users", "pictures"
 end
