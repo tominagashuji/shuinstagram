@@ -42,6 +42,8 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
+
+        PictureMailer.picture_mail(@picture).deliver  ##追記
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
