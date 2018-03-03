@@ -1,10 +1,19 @@
-<div class="container">
-  <h1>Log in</h1>
-  <%= form_with(scope: :session, url: sessions_path) do |f| %>
-    <a><%= f.label :email %></a>
-    <%= f.email_field :email %>
-    <a><%= f.label :password %></a>
-    <%= f.password_field :password %><br>
-    <%= f.submit "Log in" %>
-  <% end %>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Log in</h1>
+      <%= form_with(scope: :session, url: sessions_path) do |f| %>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %><br>
+      </div>
+
+        <%= f.submit "Log in 、、君に出来るかな！！" %>
+      <% end %>
+  </div>
 </div>

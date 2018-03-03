@@ -11,29 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
-  </div>
+  <div class="container">
+    <h1>New User</h1>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
-  </div>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :user_name %>
+    </div>
 
-  <a><%= form.label :password %></a>
-  <%= form.password_field :password %>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :user_email %>
+    </div>
 
-  <a><%= form.label :password_confirmation %></a>
-  <%= form.password_field :password_confirmation %><br>
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, id: :user_image %>
-    <%= form.hidden_field :image_cache %>
-  </div>
+    <div class="field">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation %><br>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image, id: :user_image %>
+      <%= form.hidden_field :image_cache %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
